@@ -24,10 +24,10 @@ CREATE TABLE dbo.CustomerOrder
 GO
 
 -- Foreign Key with constraint name
-CREATE TABLE dbo.CustomerOrderx
+CREATE TABLE dbo.CustomerOrder
 (
     ID BIGINT IDENTITY(1,1) PRIMARY KEY,
-    CustomerID BIGINT NOT NULL CONSTRAINT FK_CustomerOrderx_Customer REFERENCES dbo.Customer (ID),
+    CustomerID BIGINT NOT NULL CONSTRAINT FK_CustomerOrder_Customer REFERENCES dbo.Customer (ID),
     OrderAmount DECIMAL(18,2) NOT NULL
 );
 GO
