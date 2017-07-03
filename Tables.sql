@@ -7,7 +7,7 @@ CREATE TABLE dbo.Customer
 GO
 
 -- 2. Primary Key
- CREATE TABLE dbo.Customer
+CREATE TABLE dbo.Customer
 (
     ID BIGINT IDENTITY(1,1) PRIMARY KEY,
     [Name] VARCHAR(100)
