@@ -43,3 +43,7 @@ ALTER TABLE dbo.CustomerOrder
     FOREIGN KEY (CustomerID)
     REFERENCES dbo.Customer (ID)
 GO
+
+-- Drop Table
+DROP TABLE dbo.CustomerOrder
+GO
