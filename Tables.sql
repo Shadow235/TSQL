@@ -47,3 +47,31 @@ GO
 -- Drop Table
 DROP TABLE dbo.CustomerOrder
 GO
+
+-- Temporary Table
+-- hold temporary result sets within a user's session
+-- created in tempdb and deleted automatically
+CREATE TABLE #tmpProducts
+(
+    id BIGINT IDENTITY(1,1)
+    [Name] VARCHAR(100)
+);
+GO
+
+-- Global temporary table
+CREATE TABLE ##tmpProducts
+(
+    id BIGINT IDENTITY(1,1)
+    [Name] VARCHAR(100)
+);
+GO
+
+-- Table Variables
+-- introduced because temporary tables can cause recompilations
+-- scoped to the batch
+-- has no statistics
+-- use only on very small datasets
+DECLARE @tmpProducts TABLE (
+    id BIGINT IDENTITY(1,1)
+    [Name] VARCHAR(100)
+);
