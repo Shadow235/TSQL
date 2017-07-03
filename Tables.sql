@@ -1,4 +1,4 @@
--- 1. Simple Table
+-- Simple Table
 CREATE TABLE dbo.Customer
 (
     ID BIGINT IDENTITY(1,1),
@@ -6,7 +6,7 @@ CREATE TABLE dbo.Customer
 );
 GO
 
--- 2. Primary Key
+-- Primary Key
 CREATE TABLE dbo.Customer
 (
     ID BIGINT IDENTITY(1,1) PRIMARY KEY,
@@ -14,7 +14,7 @@ CREATE TABLE dbo.Customer
 );
 GO
 
--- 3. Foreign Key
+-- Foreign Key
 CREATE TABLE dbo.CustomerOrder
 (
     ID BIGINT IDENTITY(1,1) PRIMARY KEY,
@@ -23,7 +23,7 @@ CREATE TABLE dbo.CustomerOrder
 );
 GO
 
--- 4. Foreign Key with constraint name
+-- Foreign Key with constraint name
 CREATE TABLE dbo.CustomerOrderx
 (
     ID BIGINT IDENTITY(1,1) PRIMARY KEY,
@@ -32,12 +32,12 @@ CREATE TABLE dbo.CustomerOrderx
 );
 GO
 
--- 5. Remove Constraint
+-- Remove Constraint
 ALTER TABLE dbo.CustomerOrder
 DROP CONSTRAINT FK_CustomerOrderx_Customer
 GO
 
--- 6. Add Foreign Key via ALTER TABLE
+-- Add Foreign Key via ALTER TABLE
 ALTER TABLE dbo.CustomerOrder
     ADD CONSTRAINT FK_CustomerOrder_Customer
     FOREIGN KEY (CustomerID)
