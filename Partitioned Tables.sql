@@ -11,3 +11,15 @@ CREATE TABLE dbo.order_table
  (datekey int, amount int)
 ON PS(datekey);
 GO
+
+-- Split Partitions
+ALTER PARTITION FUNCTION PF() SPLIT RANGE(20030101);
+GO
+
+-- Merge Partitions
+ALTER PARTITION FUNCTION PF() MERGE RANGE (20000101);
+GO
+
+-- Switch Partitions
+ALTER TABLE dbo.order_table SWITCH PARTITION $PARTITION.PF(20000101) TO dbo.archive_staging_table 
+GO
